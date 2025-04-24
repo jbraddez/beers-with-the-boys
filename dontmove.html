@@ -66,7 +66,9 @@
         timerDisplay.textContent = `${elapsed}s`;
       }, 100);
   
-      window.addEventListener('devicemotion', detectMovement);
+      setTimeout(() => {
+        window.addEventListener('devicemotion', detectMovement);
+        }, 100);
     });
   
     function detectMovement(event) {
