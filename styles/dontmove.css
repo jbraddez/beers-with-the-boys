@@ -52,3 +52,12 @@ select{
     font-weight: 600;
     font-size: larger;
 }
+
+#lastTime{
+    color: rgb(186, 10, 10);
+    font-weight: 600;
+    position: absolute;
+    bottom: 10dvh;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -7,7 +7,7 @@ let timerInterval;
 let startTime;
 
 document.getElementById('startBtn').addEventListener('click', async () => {
-    document.getElementById('startBtn').disabled = true;
+    document.getElementById('startBtn').ariaDisabled = true;
   if (typeof DeviceMotionEvent.requestPermission === 'function') {
     try {
       const response = await DeviceMotionEvent.requestPermission();
@@ -46,9 +46,10 @@ function detectMovement(event) {
 
     const finalTime = ((Date.now() - startTime) / 1000).toFixed(1);
     status.innerHTML = `You moved after <span class="warning">${finalTime}s</span>!`;
+    localStorage.setItem('lastTime', finalTime);
     setTimeout(() => {
         window.location.reload();
-    }, 500);
+    }, 1000);
   }
 }
 
@@ -59,3 +60,4 @@ document.getElementById("difficulty").addEventListener("change", function() {
 
 threshold = parseFloat(localStorage.getItem('DMdifficulty') || 3);
 
+document.getElementById('lastTime').textContent = localStorage.getItem('lastTime') || '';
