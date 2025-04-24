@@ -20,10 +20,10 @@
         <a class="back" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
         <a href="/dontmove.html"><img src="/images/dontmove.png" alt="Don't Move"></a>
         <select name="difficulty" id="difficulty">
-            <option selected value="3">Easy</option>
-            <option value="1.8">Medium</option>
-            <option value="0.9">Hard</option>
-            <option value="0.4">Impossible</option>
+            <option selected value="12.8">Easy</option>
+            <option value="11.7">Medium</option>
+            <option value="10.8 ">Hard</option>
+            <option value="10.3">Impossible</option>
         </select>
     </header>
    
@@ -38,7 +38,7 @@
 
   <script>
     let motionActive = false;
-    var threshold = 3; 
+    var threshold = 12.8; 
     const status = document.getElementById('status');
     const timerDisplay = document.getElementById('timer');
   
@@ -75,7 +75,7 @@
     function detectMovement(event) {
       if (!motionActive) return;
   
-      const acc = event.acceleration;
+      const acc = event.accelerationIncludingGravity;
       const totalAcc = Math.abs(acc.x || 0) + Math.abs(acc.y || 0) + Math.abs(acc.z || 0);
   
       if (totalAcc > threshold) {
