@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don't Move - Beers With The Boys</title>
+    <title>Tipsy Tournament - Beers With The Boys</title>
     <link rel="website icon" href="/images/logo.png">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/styles/dontmove.css">
+    <link rel="stylesheet" href="/styles/TT.css">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Beers With The Boys">
@@ -18,28 +18,19 @@
 <body>
     <header>
         <a class="back" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
-        <a href="/dontmove.html"><img src="/images/dontmove.png" alt="Don't Move"></a>
-        <select name="difficulty" id="difficulty">
-            <option selected value="3">Easy</option>
-            <option value="1.8">Medium</option>
-            <option value="0.9">Hard</option>
-            <option value="0.4">Impossible</option>
-        </select>
-    </header>
+        <a href="/tournament.html"><img src="/images/TT.png" alt="Tipsy Tournament"></a>
+        <div onclick="changeColor()" id="color"></div></header>
    
-   
-  <main>
-    <h1>Don't Move</h1>
-    <button id="startBtn">Start Game</button>
-    <div id="status">Press Start to Begin</div>
-
-    <h2 id="timer"></h2>
-  </main>
-
-  <h1 id="lastTime"></h1>
-
-  <script src="/scripts/dontmove.js"></script>
-  
-
+        <main>
+            <div id="inputSection">
+              <textarea id="nameInput" placeholder="Enter player names, one per line..."></textarea>
+              <button id="startButton" onclick="startTournament()">Start Tournament</button>
+            </div>
+            <div id="bracketContainer"></div>
+          </main>
+          
+          <div id="wincont"><h2 id="overallWinner">Jacob</h2><h2>Press the logo to restart</h2></div>
+                             
+          <script src="/scripts/TT.js"></script>
 </body>
 </html>

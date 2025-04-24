@@ -28,7 +28,6 @@ body{
     width: 100%;
 }
 
-
 .beer-card.selected {
     background-color: rgba(0, 255, 0, 0.08);
     border: 1px solid rgba(0, 255, 0, 0.2);

@@ -1,0 +1,120 @@
+#inputSection {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #a87c4f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #dcdcdb;
+  }
+  
+  #nameInput {
+    width: 90%;
+    max-width: 500px;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #3b2a1a;
+    color: #f0e6d2;
+    border: 2px solid #a87c4f;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+  }
+  
+  button {
+    padding: 0.7rem 1.2rem;
+    background: #a87c4f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
+  button:hover {
+    background: #c89b6e;
+  }
+  
+  #bracketContainer {
+    background: #1d1208;
+    min-height: 300px;
+    padding: 1rem;
+    color: #f0e6d2;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  
+.card{
+    border-radius: 1rem;
+    background: rgba(160, 160, 160, 0.15);
+    padding: 0 0.5rem;
+    max-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-around;
+    margin: 1rem;
+    min-height: 6rem;
+}
+
+.card *{
+    font-family: monospace, sans-serif;
+}
+
+.name{
+    border: 1px solid #dcdcdb;
+    background: rgba(160, 160, 160, 0.15);
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+
+.name1{
+    border-top: 0;
+    padding-top: 0.25rem;
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.name2{
+    border-bottom: 0;
+    border-radius: 0.8rem 0.8rem 0 0;
+    padding-bottom: 0.25rem;
+}
+
+.card.finished{
+    background-color: rgba(0, 255, 0, 0.08);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+}
+
+.winner{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#wincont{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  text-align: center;
+}
+
+#overallWinner{
+    padding: 1rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    background-color: rgba(26, 139, 26, 0.3);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(5px);
+    margin-bottom: 1rem;
+}

@@ -55,9 +55,10 @@ function detectMovement(event) {
 
 document.getElementById("difficulty").addEventListener("change", function() {
     threshold = parseFloat(this.value);
-    localStorage.setItem('DMdifficulty',this.value);
+    localStorage.setItem('DMdifficulty',threshold);
 });
 
 threshold = parseFloat(localStorage.getItem('DMdifficulty') || 3);
-
+const option = document.querySelector(`option[value="${threshold}"]`);
+option.ariaSelected = true;
 document.getElementById('lastTime').textContent = localStorage.getItem('lastTime') || '';
