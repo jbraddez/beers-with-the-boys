@@ -1,0 +1,36 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cont {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid #d4aa5d;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px #1a0e07;
+    color: #f4e8c1;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.cont:hover{
+    transform: translateY(-0.5rem);
+}
+
+.beer-choice {
+    border-left-color: #f1d38f;
+}
+
+.drinking-dares {
+    border-left-color: #c94c4c;
+}
+
+.group-games {
+    border-left-color: #5f9e76;
+}

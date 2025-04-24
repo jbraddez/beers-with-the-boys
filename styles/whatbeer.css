@@ -1,0 +1,148 @@
+#beer-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+body{
+    text-align: center;
+}
+
+.beer-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    height: 10rem;
+    cursor: pointer;
+}
+
+.beer-card-spin {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+
+.beer-card.selected {
+    background-color: rgba(0, 255, 0, 0.08);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.beer-card:hover {
+    transform: scale(1.05);
+}
+
+.beer-card img {
+    max-width: 100%;
+    max-height: 8.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.beer-card h3 {
+    font-size: 1rem;
+    color: #fff1dc;
+    white-space: nowrap;
+}
+
+main{
+    transition: 300ms;
+    padding-top: 2rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+.start {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'UnifrakturCook', cursive;
+    background: linear-gradient(to bottom, #d4af37, #a67c00);
+    color: #3e2f1c;
+    border: 3px solid #3e2f1c;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 0 4px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.start:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3), inset 0 0 6px rgba(255,255,255,0.5);
+}
+
+.start:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.choose{
+    display: none;
+    margin: 0 auto;
+}
+
+.spinner .beer-card{
+    height: 90%;
+    margin-top: -1rem;
+}
+
+.beer-card-spin {
+    opacity: 0; 
+    position: absolute;
+}
+
+.beer-card-spin.show {
+    opacity: 1; 
+}
+
+#spincont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 5rem auto;
+}
+
+#howmany{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width:400px){
+    .beer-card{
+        height: 8rem;
+        width: 100px;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .beer-card img{
+        height: 6.5rem;
+    }
+
+    .beer-card h3{
+        text-align: center;
+        width: 100%;
+    }
+}
+
+#amount{
+    margin-top: 1rem;
+}
+#number{
+    font-weight: 600;
+    font-size: large;
+}
