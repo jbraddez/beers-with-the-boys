@@ -46,6 +46,7 @@
     let startTime;
   
     document.getElementById('startBtn').addEventListener('click', async () => {
+        window.removeEventListener('devicemotion', detectMovement); 
       if (typeof DeviceMotionEvent.requestPermission === 'function') {
         try {
           const response = await DeviceMotionEvent.requestPermission();
@@ -58,7 +59,7 @@
   
       status.innerHTML = 'Game started. Don’t move...';
       timerDisplay.textContent = "0.0s";
-      motionActive = false;
+      motionActive = true;
   
       startTime = Date.now();
       timerInterval = setInterval(() => {
@@ -68,7 +69,7 @@
   
       setTimeout(() => {
         window.addEventListener('devicemotion', detectMovement);
-        }, 100);
+        }, 300);
     });
   
     function detectMovement(event) {
