@@ -34,3 +34,7 @@ main{
 .group-games {
     border-left-color: #5f9e76;
 }
+
+.dont-move{
+    border-left-color: rgb(35, 169, 169);
+}

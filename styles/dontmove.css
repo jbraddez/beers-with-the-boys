@@ -46,3 +46,9 @@ select{
     padding: 0.2rem;
     font-size: 1rem;
 }
+
+.warning{
+    color: rgb(186, 10, 10);
+    font-weight: 600;
+    font-size: larger;
+}
