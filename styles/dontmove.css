@@ -1,0 +1,36 @@
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'UnifrakturCook', cursive;
+    background: linear-gradient(to bottom, #d4af37, #a67c00);
+    color: #3e2f1c;
+    border: 3px solid #3e2f1c;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 0 4px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3), inset 0 0 6px rgba(255,255,255,0.5);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#timer{
+    font-weight: 600;
+    margin: 2rem 0;
+}

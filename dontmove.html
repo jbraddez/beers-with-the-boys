@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Don't Move or Drink</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 3rem;
-      background: #ffe2b3;
-    }
-    #status {
-      font-size: 2rem;
-      margin-top: 2rem;
-    }
-    button {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      background-color: #ff9900;
-      color: white;
-      cursor: pointer;
-    }
-    .warning {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Down It - Beers With The Boys</title>
+    <link rel="website icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/dontmove.css">
 </head>
 <body>
+    <header>
+        <a class="back" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
+        <a href="/downit.html"><img src="/images/downit.png" alt="Down It"></a></header>
+   
+   
+  <main>
+    <h1>Don't Move</h1>
+    <button id="startBtn">Start Game</button>
+    <div id="status">Press Start to Begin</div>
 
-  <h1>🕴️ Don't Move or Drink</h1>
-  <p>Hold your phone still. If you move it... you drink 🍻</p>
-  <button id="startBtn">Start Game</button>
-  <div id="status">Waiting...</div>
+    <h2 id="timer"></h2>
+  </main>
 
   <script>
     let motionActive = false;
     const threshold = 0.5; 
     const status = document.getElementById('status');
-
+    const timerDisplay = document.getElementById('timer');
+  
+    let timerInterval;
+    let startTime;
+  
     document.getElementById('startBtn').addEventListener('click', async () => {
       if (typeof DeviceMotionEvent.requestPermission === 'function') {
         try {
@@ -51,23 +41,37 @@
           return;
         }
       }
-
+  
       status.innerHTML = 'Game started. Don’t move...';
+      timerDisplay.textContent = "0.0s";
       motionActive = true;
-
-      window.addEventListener('devicemotion', (event) => {
-        if (!motionActive) return;
-
-        const acc = event.acceleration;
-        const totalAcc = Math.abs(acc.x || 0) + Math.abs(acc.y || 0) + Math.abs(acc.z || 0);
-
-        if (totalAcc > threshold) {
-          motionActive = false;
-          status.innerHTML = '<span class="warning">You moved! DRINK! 🍻</span>';
-        }
-      });
+  
+      startTime = Date.now();
+      timerInterval = setInterval(() => {
+        const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+        timerDisplay.textContent = `${elapsed}s`;
+      }, 100);
+  
+      window.addEventListener('devicemotion', detectMovement);
     });
+  
+    function detectMovement(event) {
+      if (!motionActive) return;
+  
+      const acc = event.acceleration;
+      const totalAcc = Math.abs(acc.x || 0) + Math.abs(acc.y || 0) + Math.abs(acc.z || 0);
+  
+      if (totalAcc > threshold) {
+        motionActive = false;
+        clearInterval(timerInterval);
+        window.removeEventListener('devicemotion', detectMovement);
+  
+        const finalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+        status.innerHTML = `<span class="warning">You moved after ${finalTime}s!</span>`;
+      }
+    }
   </script>
+  
 
 </body>
 </html>
