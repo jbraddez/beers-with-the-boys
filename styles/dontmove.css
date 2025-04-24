@@ -54,7 +54,7 @@ select{
 }
 
 #lastTime{
-    color: rgb(213, 17, 17);
+    color: rgb(255, 31, 31);
     font-weight: 600;
     position: absolute;
     bottom: 10dvh;

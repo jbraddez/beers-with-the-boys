@@ -60,4 +60,4 @@ document.getElementById("difficulty").addEventListener("change", function() {
 
 threshold = parseFloat(localStorage.getItem('DMdifficulty') || 3);
 
-document.getElementById('lastTime').textContent = localStorage.getItem('lastTime') + 's' || '';
+document.getElementById('lastTime').textContent = localStorage.getItem('lastTime') || '';
