@@ -59,5 +59,13 @@ select{
     position: absolute;
     bottom: 10dvh;
     left: 50%;
+    text-align: center;
     transform: translateX(-50%);
+}
+@media screen and (max-height: 400px){
+    #lastTime{
+        position: relative;
+        top: -2rem;
+        margin-bottom: 2rem;
+    }
 }
