@@ -48,13 +48,13 @@ select{
 }
 
 .warning{
-    color: rgb(186, 10, 10);
+    color: rgb(213, 17, 17);
     font-weight: 600;
     font-size: larger;
 }
 
 #lastTime{
-    color: rgb(186, 10, 10);
+    color: rgb(213, 17, 17);
     font-weight: 600;
     position: absolute;
     bottom: 10dvh;
