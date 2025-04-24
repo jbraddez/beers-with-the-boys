@@ -7,7 +7,6 @@ let timerInterval;
 let startTime;
 
 document.getElementById('startBtn').addEventListener('click', async () => {
-    resetGame();
     document.getElementById('startBtn').disabled = true;
   if (typeof DeviceMotionEvent.requestPermission === 'function') {
     try {
