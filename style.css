@@ -10,6 +10,7 @@ body {
     background: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); 
     background-color: #3b2c23; 
     background-blend-mode: multiply;
+    -webkit-background-blend-mode: multiply;
 }
 
 header{
