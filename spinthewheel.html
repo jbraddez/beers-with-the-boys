@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin The Wheel - Beers With The Boys</title>
+    <link rel="website icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/downit.css">
+    <style>
+        li{
+            font-size: 1rem !important;
+        }
+
+        @media screen and (max-width:600px){
+            li{
+                font-size: 0.7rem !important;
+            }
+        }
+
+        @media screen and (max-width:420px){
+            li{
+                font-size: 0.5rem !important;
+            }
+        }
+
+        fieldset{
+            min-width: 270px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        body{
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="back" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
+        <a href="/spinthewheel.html"><img src="/images/spinthewheel.png" alt="Spin The Wheel"></a>
+        <div onclick="changeColor()" id="color"></div></header>
+   
+    <main>
+        <h3 style="margin-bottom: 2rem; text-align: center;">Take it in turns spinning the wheel</h3>
+        <fieldset class="ui-wheel-of-fortune">
+            <ul>
+                <li>Say it or shot it</li>
+                <li>Down your drink</li>
+                <li>Pick someone to down it</li>
+                <li>3 sips</li>
+                <li>Truth or drink</li>
+                <li>Everyone drinks</li>
+                <li>Make a rule</li>
+                <li>Last to touch table drinks</li>
+                <li>Drink + compliment</li>
+                <li>Switch seats or drink</li>
+                <li>Do a dance or down it</li>
+                <li>Free pass</li>                
+            </ul>
+            <button type="button">SPIN</button>
+          </fieldset>
+    </main>
+      
+    
+    <script src="/scripts/downit.js"></script>  
+</body>
+</html>
